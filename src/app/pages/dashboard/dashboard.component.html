@@ -1,3 +1,5 @@
-<iframe id="hello" [src]="MapView" height="850" width="100%" frameBorder="0" >Not Supported</iframe>
-<iframe id="hello" [src]="TelemetryView" height="850" width="100%" frameBorder="0" >Not Supported</iframe>
+<button (click)="onclick($event)" mdbBtn type="button" color="blue" rounded="true" outline="true" mdbWavesEffect>Collapse</button>
+
+<iframe *ngIf="hideElement" id="MapView_ID" [src]="MapView" [height]="UpperDashboardHieght" width="100%" frameBorder="0" >Not Supported</iframe>
+<iframe  id="TelemetryView_ID" [src]="TelemetryView" [height]="LowerDashboardHieght" width="100%" frameBorder="0" >Not Supported</iframe>
 
