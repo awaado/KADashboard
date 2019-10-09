@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;
   user: any;
+  opacityOfDiv:any;
 
   themes = [
     {
@@ -46,8 +47,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private userService: UserData,
               private layoutService: LayoutService,
               private breakpointService: NbMediaBreakpointsService) {
+                this.opacityOfDiv=0.1;
   }
+  mouseEnter(){
+    this.opacityOfDiv=1;
 
+
+  }
+  mouseLeave(){
+this.opacityOfDiv=0.1
+
+  }
   ngOnInit() {
     this.currentTheme = this.themeService.currentTheme;
 

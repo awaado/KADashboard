@@ -65,7 +65,7 @@ export class DashboardComponent implements OnInit  {
               private sanitizer: DomSanitizer) {
     
     this.MapView = this.sanitizer.bypassSecurityTrustResourceUrl("https://demo.thingsboard.io/dashboards/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards")   
-    this.TelemetryView = this.sanitizer.bypassSecurityTrustResourceUrl("https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0")
+    this.TelemetryView = this.sanitizer.bypassSecurityTrustResourceUrl("https://demo.thingsboard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909")
    
   }
   

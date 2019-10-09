@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  
 
   .logo-container {
     display: flex;
@@ -31,6 +32,8 @@
     display: flex;
     align-items: center;
     width: auto;
+    opacity: '0.1';
+    
 
     .sidebar-toggle {
       @include nb-ltr(padding-right, 1.25rem);
