@@ -1,9 +1,9 @@
-import {Component, OnInit  } from '@angular/core';
+import {Component, OnInit ,ApplicationRef } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators' ;
 import { SolarData } from '../../@core/data/solar';
 import { DomSanitizer, SafeResourceUrl ,  SafeUrl} from '@angular/platform-browser';
-
+import { ToggleService } from '../../Services/toggle.service';
 import{trigger,state,style,transition,animate} from '@angular/animations'
 
 
@@ -53,8 +53,8 @@ export class DashboardComponent implements OnInit  {
 
  // url for iframe
  private MapView:SafeUrl;
- private TelemetryView:SafeResourceUrl;
-
+ private TelemetryView:SafeUrl;
+  private sora:string;
  // toggle iframe 
  private toogle:boolean = true;
  helpMenuOpen: string;
@@ -62,23 +62,23 @@ export class DashboardComponent implements OnInit  {
 
   constructor(private themeService: NbThemeService,
               private solarService: SolarData,
-              private sanitizer: DomSanitizer) {
+              private sanitizer: DomSanitizer,
+              private ToggleService :ToggleService) {
     
     this.MapView = this.sanitizer.bypassSecurityTrustResourceUrl("https://demo.thingsboard.io/dashboards/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards")   
-    this.TelemetryView = this.sanitizer.bypassSecurityTrustResourceUrl("https://demo.thingsboard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909")
-   
+    this.TelemetryView = this.sanitizer.bypassSecurityTrustResourceUrl("https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0")
+    this.ToggleService.frameWidth="1370px"
   }
   
- collapse(ev){
-  this.helpMenuOpen = this.helpMenuOpen === 'out' ? 'in' : 'out';
-  this.helpMenuOpen2 = this.helpMenuOpen2 === 'out' ? 'in' : 'out';
-
-
+ collapse(){
+  
+this.ToggleService.getState();
  }
  ngOnInit() {
-  this.helpMenuOpen = 'out';
-  this.helpMenuOpen2 = 'out';
-
+  this.ToggleService.state = 'in';
+  this.ToggleService.frameWidth="1370px"
+  
 }
+
  
 }

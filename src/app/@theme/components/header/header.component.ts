@@ -1,15 +1,17 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
+import { ToggleService } from '../../../Services/toggle.service';
 
 import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-
+import{DashboardComponent} from '../../../pages/dashboard/dashboard.component'
 @Component({
   selector: 'ngx-header',
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
+  providers:[DashboardComponent]
 })
 export class HeaderComponent implements OnInit, OnDestroy {
 
@@ -46,7 +48,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private themeService: NbThemeService,
               private userService: UserData,
               private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+              private ToggleService :ToggleService,
+              private DashboardComponent: DashboardComponent) {
                 this.opacityOfDiv=0.1;
   }
   mouseEnter(){
@@ -93,6 +97,7 @@ this.opacityOfDiv=0.1
   toggleSidebar(): boolean {
     this.sidebarService.toggle(true, 'menu-sidebar');
     this.layoutService.changeLayoutSize();
+    this.ToggleService.setWidth()
 
     return false;
   }

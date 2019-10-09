@@ -14,7 +14,7 @@ import {NbLayoutDirection, NbLayoutDirectionService} from "@nebular/theme";
         <ng-content select="nb-menu"></ng-content>
       </nb-sidebar>
 
-      <nb-layout-column padding style="padding: 1px 5px 1px 62px">
+      <nb-layout-column  style="padding: 1px 1px 1px 5px">
         <ng-content select="router-outlet"></ng-content>
       </nb-layout-column>
 

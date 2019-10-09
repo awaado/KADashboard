@@ -8,19 +8,21 @@ import { MENU_ITEMS_RIGHT } from './pages-menu-right';
   selector: 'ngx-pages',
   styleUrls: ['pages.component.scss'],
   template: `
-    <ngx-two-columns-layout>
-      <nb-menu [items]="menu"></nb-menu>
+  <ngx-one-column-layout>
+    <nb-menu [items]="menu"></nb-menu>
       
       
       <router-outlet></router-outlet>
-    </ngx-two-columns-layout>
-
-    <ngx-one-column-layout>
     
-    
-    <nb-menu   [ngClass]="ss" [items]="menur"></nb-menu>
   
   </ngx-one-column-layout>
+    <ngx-two-columns-layout>
+    <nb-menu   [ngClass]="ss" [items]="menur"></nb-menu>
+
+      
+    </ngx-two-columns-layout>
+
+    
 
   
   `,
