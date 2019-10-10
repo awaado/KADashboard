@@ -1,12 +1,20 @@
-
 <div >
+    <iframe [@slideInOut2]="ToggleService.state" id="TelemetryView" [src]="TelemetryView" height="100%" width="100%" frameBorder="0" >Not Supported</iframe>
 
-    <button nbButton status="success"  (click)="collapse()">collapse<nb-icon icon="star"></nb-icon> </button>
-    <iframe [@slideInOut2]="ToggleService.state" id="TelemetryView" [src]="TelemetryView"  width="100%" frameBorder="0" >Not Supported</iframe>
-    
-    <iframe [@slideInOut]="ToggleService.state" id="MapView" [src]="MapView"  width="100%"frameBorder="0" >Not Supported</iframe>
-    
 
+
+</div>
+
+<div width="50%">
+    
+  
+    
+    <iframe [@slideInOut]="ToggleService.state" id="MapView" style=" position: relative" [src]="MapView" height="100%" width="100%"frameBorder="0" >Not Supported</iframe>
+    <button nbButton status="success" style=" z-index: 1; position: sticky;
+    
+    bottom: 100% " (click)="collapse()">collapse<nb-icon icon="star"></nb-icon> </button>
+   
+ 
 
 </div>
 

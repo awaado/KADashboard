@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   userPictureOnly: boolean = false;
   user: any;
   opacityOfDiv:any;
-
+  
   themes = [
     {
       value: 'default',
@@ -95,6 +95,19 @@ this.opacityOfDiv=0.1
   }
 
   toggleSidebar(): boolean {
+    console.log(this.sidebarService);
+    
+    
+    this.sidebarService.toggle(true, 'menu-sidebar-rtl');
+    this.layoutService.changeLayoutSize();
+    this.ToggleService.setWidth()
+
+    return false;
+  }
+  toggleSidebar2(): boolean {
+    console.log(this.sidebarService);
+    
+    
     this.sidebarService.toggle(true, 'menu-sidebar');
     this.layoutService.changeLayoutSize();
     this.ToggleService.setWidth()

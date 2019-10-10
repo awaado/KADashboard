@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
         <ngx-header></ngx-header>
       </nb-layout-header>
 
-      <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
+      <nb-sidebar class="menu-sidebar" tag="menu-sidebar-rtl" responsive>
         <ng-content select="nb-menu"></ng-content>
       </nb-sidebar>
 
@@ -23,4 +23,7 @@ import { Component } from '@angular/core';
     </nb-layout>
   `,
 })
-export class OneColumnLayoutComponent {}
+export class OneColumnLayoutComponent {
+
+  //take care tag menu side bar line 12   <nb-sidebar class="menu-sidebar" tag="menu-sidebar-rtl" responsive>
+}

@@ -21,7 +21,7 @@ interface CardSettings {
     trigger('slideInOut2', [
       state('in', style({
       
-        height: '650px',
+        height: '550px',
        
       })),
       state('out', style({
@@ -35,13 +35,13 @@ interface CardSettings {
     trigger('slideInOut', [
       state('in', style({
        
-        height: '200px',
+        height: '150px',
        
       })),
       state('out', style({
         opacity: '100',
         
-        height: '850px',
+        height: '700px',
        
       })),
       transition('in => out', animate('400ms ease-in-out')),
@@ -65,8 +65,8 @@ export class DashboardComponent implements OnInit  {
               private sanitizer: DomSanitizer,
               private ToggleService :ToggleService) {
     
-    this.MapView = this.sanitizer.bypassSecurityTrustResourceUrl("https://demo.thingsboard.io/dashboards/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards")   
-    this.TelemetryView = this.sanitizer.bypassSecurityTrustResourceUrl("https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0")
+    this.MapView = this.sanitizer.bypassSecurityTrustResourceUrl("http://localhost:9090/home")   
+    this.TelemetryView = this.sanitizer.bypassSecurityTrustResourceUrl("http://localhost:9090/home")
     this.ToggleService.frameWidth="1370px"
   }
   
